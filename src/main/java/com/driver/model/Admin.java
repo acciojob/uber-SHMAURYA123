@@ -10,33 +10,33 @@ public class Admin{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-   private int AdminId;
-   private String userName;
+   private int adminId;
+   private String username;
    private String password;
 
     public Admin() {
     }
 
-    public Admin(int adminId, String userName, String password) {
-        AdminId = adminId;
-        this.userName = userName;
+    public Admin(int adminId, String username, String password) {
+        this.adminId = adminId;
+        this.username = username;
         this.password = password;
     }
 
     public int getAdminId() {
-        return AdminId;
+        return adminId;
     }
 
     public void setAdminId(int adminId) {
-        AdminId = adminId;
+        this.adminId = adminId;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
