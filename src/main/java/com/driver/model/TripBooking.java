@@ -15,7 +15,7 @@ public class TripBooking {
     private int bill;
 
     @Enumerated(value = EnumType.STRING)
-    private TripStatus tripStatus;
+    private TripStatus status;
 
 
     @JoinColumn
@@ -29,23 +29,14 @@ public class TripBooking {
     public TripBooking() {
     }
 
-    public TripBooking(int tripBookingId, String fromLocation, String toLocation, int distanceInKm,
-                       int bill, TripStatus tripStatus, Customer customer, Driver driver) {
+    public TripBooking(int tripBookingId, String fromLocation, String toLocation, int distanceInKm, int bill, TripStatus status, Customer customer, Driver driver) {
         this.tripBookingId = tripBookingId;
         this.fromLocation = fromLocation;
         this.toLocation = toLocation;
         this.distanceInKm = distanceInKm;
         this.bill = bill;
-        this.tripStatus = tripStatus;
+        this.status = status;
         this.customer = customer;
-        this.driver=driver;
-    }
-
-    public Driver getDriver() {
-        return driver;
-    }
-
-    public void setDriver(Driver driver) {
         this.driver = driver;
     }
 
@@ -89,12 +80,12 @@ public class TripBooking {
         this.bill = bill;
     }
 
-    public TripStatus getTripStatus() {
-        return tripStatus;
+    public TripStatus getStatus() {
+        return status;
     }
 
-    public void setTripStatus(TripStatus tripStatus) {
-        this.tripStatus = tripStatus;
+    public void setStatus(TripStatus status) {
+        this.status = status;
     }
 
     public Customer getCustomer() {
@@ -103,5 +94,13 @@ public class TripBooking {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
 }
