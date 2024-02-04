@@ -1,56 +1,55 @@
 package com.driver.model;
 
-
-import io.swagger.models.auth.In;
-
 import javax.persistence.*;
 
+
+
 @Entity
-@Table(name = "cab")
-public class Cab {
+@Table(name = "Cab")
+public class Cab{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer Id;
-    private Integer perKmRate;
-    private Boolean availabile;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int Id;
 
-    @JoinColumn
+    int perKmRate;
+
+    boolean available;
+
+
+    //For mapping
     @OneToOne
-    private Driver driver;
+    @JoinColumn
+    Driver driver;
+
+
 
     public Cab() {
+
     }
 
-    public Cab(Integer id, Integer perKmRate, Boolean availabile, Driver driver) {
-        Id = id;
-        this.perKmRate = perKmRate;
-        this.availabile = availabile;
-        this.driver = driver;
-    }
-
-    public Integer getId() {
+    public int getId() {
         return Id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         Id = id;
     }
 
-    public Integer getPerKmRate() {
+    public int getPerKmRate() {
         return perKmRate;
     }
 
-    public void setPerKmRate(Integer perKmRate) {
+    public void setPerKmRate(int perKmRate) {
         this.perKmRate = perKmRate;
     }
 
-    public Boolean getAvailabile() {
-        return availabile;
+    public boolean getAvailable() {
+        return available;
     }
 
-    public void setAvailabile(Boolean availabile) {
-        this.availabile = availabile;
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 
     public Driver getDriver() {
@@ -58,6 +57,8 @@ public class Cab {
     }
 
     public void setDriver(Driver driver) {
-        this.driver = driver;
+        this.driver= driver;
     }
+
+
 }
