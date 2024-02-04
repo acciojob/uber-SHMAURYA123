@@ -1,6 +1,7 @@
 package com.driver.model;
 
 
+import io.swagger.models.auth.In;
 
 import javax.persistence.*;
 
@@ -10,8 +11,8 @@ public class Cab {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
-    private int perKmRate;
+    private Integer Id;
+    private Integer perKmRate;
     private Boolean availabile;
 
     @JoinColumn
@@ -21,26 +22,26 @@ public class Cab {
     public Cab() {
     }
 
-    public Cab(int id, int perKmRate, Boolean availabile, Driver driver) {
+    public Cab(Integer id, Integer perKmRate, Boolean availabile, Driver driver) {
         Id = id;
         this.perKmRate = perKmRate;
         this.availabile = availabile;
         this.driver = driver;
     }
 
-    public int getId() {
+    public Integer getId() {
         return Id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         Id = id;
     }
 
-    public int getPerKmRate() {
+    public Integer getPerKmRate() {
         return perKmRate;
     }
 
-    public void setPerKmRate(int perKmRate) {
+    public void setPerKmRate(Integer perKmRate) {
         this.perKmRate = perKmRate;
     }
 
